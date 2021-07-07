@@ -1,0 +1,17 @@
+<center>
+  <h1>Teachers</h1>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Teacher_Id</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @class.each do |c| %>
+        <tr>
+          <td><%= c.teacher.name %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</center>

@@ -1,0 +1,11 @@
+<center>
+  <h1>New Classrooms</h1>
+
+  <%= form_for @classroom do |form|%>
+    <%= form.text_field :name %><br>
+    <% @classroom.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+    <%= form.submit %>
+  <% end %>
+</center>

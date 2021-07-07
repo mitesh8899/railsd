@@ -1,0 +1,6 @@
+<center>
+  <h1>Classroom Name: <br><u><%= @classroom.name %></h1>
+  <% @teachers.each do |teacher| %>
+    <%= teacher.name %><br>
+  <% end %>
+</center>
