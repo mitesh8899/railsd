@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  resources :lectures
 #Classroom Routes
   root to: 'classrooms#index'
   # resources: classrooms
@@ -31,6 +33,6 @@ Rails.application.routes.draw do
 
   get 'classteachers', to: 'classteachers#index'
   # get 'classteachers', to: 'classtechers#show',as: :classteacher
-  
+
 
 end
