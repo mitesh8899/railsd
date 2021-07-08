@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'classteacher/new'
+  get 'classteacher/create'
+  get 'classteacher/index'
 #Classroom Routes
   root to: 'classrooms#index'
   # resources: classrooms
@@ -15,8 +18,10 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  resources :animals, only: [:new, :create]
-  
+  resources :class_teachers
+    
+   
+
   #Teacher Routes
 
   get 'teachers', to: 'teachers#index'
@@ -27,11 +32,6 @@ Rails.application.routes.draw do
   delete 'teachers/:id', to: 'teachers#destroy',as: :delete_teacher
   # get 'teachers/tech/:id', to: 'teachers#tech',as: :teacher 
   get 'teachers/:id', to: 'teachers#show',as: :teacher 
-
-  #classteachers Routes
-
-  get 'classteachers', to: 'classteachers#index'
-  # get 'classteachers', to: 'classtechers#show',as: :classteacher
 
 
 end

@@ -1,0 +1,32 @@
+<center>
+  <h2>Class Teachers</h2>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Teacher_name</th>
+        <th scope="col">Classroom_name</th>
+        <th scope="col">Lecture_number</th>
+        <th scope="col">Edit</th>
+        <th scop="col">Destroy</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @classteachers.each do |classteacher| %>
+        <tr>
+          <td><%= link_to classteacher.teacher.name, class_teacher_path(classteacher.id, type: 'teacher') %></td> 
+          <td><%= link_to classteacher.classroom.name, class_teacher_path(classteacher.id, type: 'classroom') %></td> 
+          <td><%= link_to classteacher.lecture_number, class_teacher_path(classteacher.id, type: 'lecture_number') %></td>
+          <td><%= link_to 'Edit', edit_class_teacher_path(classteacher.id), method: :get %></td>
+          <td><%= link_to 'Delete', class_teacher_path(classteacher), method: :delete %></td>
+        </tr>  
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+  <%= link_to 'New Class Teacher', new_class_teacher_path %>
+  <br>
+  <%= link_to 'Teacher', teachers_path %>
+  <br>
+  <%= link_to "Classroom", classrooms_path %>
+  
+</center>

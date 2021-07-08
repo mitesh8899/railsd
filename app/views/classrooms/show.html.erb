@@ -1,8 +1,17 @@
-<center>
-  <h1>Classroom Name: <br><u><%= @classroom.name %></h1>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Teacher Name</th>
+      <th scope="col">Lecture Name</th>
+    </tr>
+  </thead>
   <% @teachers.each do |class_teacher| %>
-    <%= class_teacher.teacher.name %>-<%= class_teacher.lecture_number %><br>  
-    
+
+    <tbody>
+      <tr>
+        <td><%= class_teacher.teacher.name %></td>
+        <td><%= class_teacher.lecture_number %></td>          
+      </tr>
+    </tbody>
   <% end %>
- 
-</center>
+</table>

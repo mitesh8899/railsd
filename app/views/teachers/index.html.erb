@@ -4,23 +4,27 @@
     <thead class="thead-dark">
       <tr>
         <th scope="col">Name</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+
       </tr>
     </thead>
     <tbody>
       <% @teachers.each do |teacher|%>
         <tr>
           <td><%= link_to teacher.name, teacher %></td>
+          <td><%= link_to 'Edit', edit_teacher_path(teacher.id), method: :get %></td>
           <td><%= link_to 'Delete', delete_teacher_path(teacher.id), method: :delete %></td>
-          <td><%= link_to 'Show',  teacher_path(teacher.id), method: :get %></td>
         </tr>  
       <% end %>
     </tbody>
   </table>
   <br>
-  <%= link_to 'teacher',  teachers_path %>
-  <br>
+  
   <%= link_to 'New teacher', new_teacher_path %>
   <br>
   <%= link_to "Classroom", classrooms_path %>
+  <br>
+  <%= link_to 'New Class Teacher', new_class_teacher_path %>
 
 </center>

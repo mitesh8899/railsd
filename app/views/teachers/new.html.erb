@@ -1,15 +1,13 @@
 <center>
   <h1>New Teachers</h1>
 
+
   <%= form_for @teacher do |form|%>
     <%= form.text_field :name %><br>
     <% @teacher.errors.full_messages_for(:name).each do |message| %>
       <div><%= message %></div>
     <% end %>
-    
     <%= form.submit %>
-    <% end %>
-</center>
-
-
+  <% end %>
+</center>  
 

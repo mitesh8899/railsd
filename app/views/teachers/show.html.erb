@@ -1,10 +1,21 @@
-<center>
-  <h1>Teacher Name: <br><u><%= @teacher.name %></h1>
-  <h1>Classroom id: <br><u><%= @teacher.classrooms.ids %></h1>
+<center>     
+<h1>Teachers</h1>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Classroom Name</th>
+      <th scope="col"Lecture Number</th>
+    </tr>
+  </thead>
 
-  <% @teacher.classrooms.each do |b|%>
-    <%= b.name %>
-  <% end %>
-  
-<center>
+  <% @classrooms.each do |class_teacher|%>
+    <tbody>
+        <tr>
+          <td><%= class_teacher.classroom.name %></td>
+          <td><%= class_teacher.lecture_number %></td>
+        </tr>  
+    </tbody>
+  <% end %>  
+</table>
+
 
