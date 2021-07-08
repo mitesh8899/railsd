@@ -34,12 +34,9 @@ class ClassroomsController < ApplicationController
 
   def show
     @classroom = Classroom.find(params[:id])
-    @teachers = @classroom.teachers
+    @teachers = @classroom.class_teachers
   end
 
-  def cla
-    @class = ClassTeacher.all
-  end
 
   private
   def classroom_params

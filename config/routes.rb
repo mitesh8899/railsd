@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :lectures
 #Classroom Routes
   root to: 'classrooms#index'
   # resources: classrooms
@@ -11,12 +10,12 @@ Rails.application.routes.draw do
   patch 'classrooms/:id', to: 'classrooms#update',as: :update_classroom 
   delete 'classrooms/:id', to: 'classrooms#destroy',as: :delete_classroom
   
-  # get 'classrooms/class', to: 'classrooms#cla',as: :classroom
+  # get 'classrooms/lecture', to: 'classrooms#lecture',as: :classroom
   get 'classrooms/:id', to: 'classrooms#show',as: :classroom 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-
+  resources :animals, only: [:new, :create]
   
   #Teacher Routes
 

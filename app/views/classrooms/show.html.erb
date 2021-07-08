@@ -1,7 +1,8 @@
 <center>
   <h1>Classroom Name: <br><u><%= @classroom.name %></h1>
-  <% @teachers.each do |teacher| %>
-    <%= teacher.name %><br>
+  <% @teachers.each do |class_teacher| %>
+    <%= class_teacher.teacher.name %>-<%= class_teacher.lecture_number %><br>  
+    
   <% end %>
  
 </center>

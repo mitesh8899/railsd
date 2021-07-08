@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_07_055017) do
+ActiveRecord::Schema.define(version: 2021_07_08_052143) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2021_07_07_055017) do
     t.bigint "teacher_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "lecture_number"
     t.index ["classroom_id"], name: "index_class_teachers_on_classroom_id"
     t.index ["teacher_id"], name: "index_class_teachers_on_teacher_id"
   end
@@ -30,16 +31,6 @@ ActiveRecord::Schema.define(version: 2021_07_07_055017) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "lectures", force: :cascade do |t|
-    t.string "number"
-    t.bigint "teacher_id", null: false
-    t.bigint "classroom_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["classroom_id"], name: "index_lectures_on_classroom_id"
-    t.index ["teacher_id"], name: "index_lectures_on_teacher_id"
-  end
-
   create_table "teachers", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -48,6 +39,4 @@ ActiveRecord::Schema.define(version: 2021_07_07_055017) do
 
   add_foreign_key "class_teachers", "classrooms"
   add_foreign_key "class_teachers", "teachers"
-  add_foreign_key "lectures", "classrooms"
-  add_foreign_key "lectures", "teachers"
 end

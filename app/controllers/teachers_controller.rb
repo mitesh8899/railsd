@@ -36,9 +36,6 @@ class TeachersController < ApplicationController
     @teacher = Teacher.find(params[:id])
   end
 
-  def tech
-    @class = ClassTeacher.all
-  end
 
   private
   def teacher_params
