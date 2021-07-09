@@ -30,24 +30,39 @@
       <li class="nav-item">
       <%= link_to 'Class Teacher', class_teachers_path, class: :"nav-link" %></td>
       </li>
-
     </ul>
   </div>
-</nav>
-    <div class="container">
-      <div class="row">
-        <div class="col-2">
-          <div id="side"><br>
+  <ul class = "navbar-nav"
+    <% if user_signed_in? %>
+       <li> <%= link_to "Logout", destroy_user_session_path, method: :delete %> </li>
+    <% else %>
+      <li><%= link_to "Sign up", new_user_registration_path %></li><br>  || 
+       <li><%= link_to "Login", new_user_session_path %></li>
+   <% end %>
+  </ul>
+  
+  </nav>
+      <div class="container">
+        <div class="row">
+          <div class="col-2">
+            <div id="side"><br>
+            <% if notice %>
+              <p class="alert alert-success"><%= notice %></p>
+            <% end %>
+            <% if alert %>
+              <p class="alert alert-danger"><%= alert %></p>
+            <% end %>
           
+            </div>
+            <div id="main">
+              <%= @content_for_layout %>
+            </div>
           </div>
-          <div id="main">
-            <%= @content_for_layout %>
+          <div class="col-10">
+
+            <%= yield %>
           </div>
-        </div>
-        <div class="col-10">
-          <%= yield %>
         </div>
       </div>
-    </div>
-  </body>
+    </body>
 </html>

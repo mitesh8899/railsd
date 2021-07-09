@@ -1,23 +1,21 @@
 Rails.application.routes.draw do
+ 
+  devise_for :users
 
-  get 'classteacher/new'
-  get 'classteacher/create'
-  get 'classteacher/index'
-#Classroom Routes
+  
+  #Classroom Routes
   root to: 'classrooms#index'
+  
   # resources: classrooms
   get 'classrooms', to: 'classrooms#index'
   get 'classrooms/new', to: 'classrooms#new',as: :new_classroom
   post 'classrooms', to: 'classrooms#create',as: :create_classroom 
   get 'classrooms/edit/:id', to: 'classrooms#edit',as: :edit_classroom
   patch 'classrooms/:id', to: 'classrooms#update',as: :update_classroom 
-  delete 'classrooms/:id', to: 'classrooms#destroy',as: :delete_classroom
-  
-  # get 'classrooms/lecture', to: 'classrooms#lecture',as: :classroom
+  delete 'classrooms/:id', to: 'classrooms#destroy',as: :delete_classroom  
   get 'classrooms/:id', to: 'classrooms#show',as: :classroom 
 
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-
+  #Class_teachers Routes
   resources :class_teachers
     
    
@@ -30,7 +28,6 @@ Rails.application.routes.draw do
   get 'teachers/:id/edit', to: 'teachers#edit',as: :edit_teacher
   patch 'teachers/:id', to: 'teachers#update',as: :update_teacher 
   delete 'teachers/:id', to: 'teachers#destroy',as: :delete_teacher
-  # get 'teachers/tech/:id', to: 'teachers#tech',as: :teacher 
   get 'teachers/:id', to: 'teachers#show',as: :teacher 
 
 

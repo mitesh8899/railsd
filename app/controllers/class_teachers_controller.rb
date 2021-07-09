@@ -1,4 +1,6 @@
 class ClassTeachersController < ApplicationController
+
+
   def index
     @classteachers = ClassTeacher.all
   end
