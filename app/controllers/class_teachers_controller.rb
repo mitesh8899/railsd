@@ -27,7 +27,7 @@ class ClassTeachersController < ApplicationController
   def update
     @classteacher = ClassTeacher.find(params[:id])
     @classteacher.update(classteacher_params)
-    reditrect_to_class_teachers_path
+    redirect_to class_teachers_path
   end
    
 

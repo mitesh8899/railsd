@@ -2,12 +2,14 @@
   <table class="table">
     <thead class="thead-dark">
       <tr>
+        <th scope="col">Classroom Name</th>
         <th scope="col">Teacher Name</th>
-        <th scop="col">Lecture Number</th>
+        <th scop="col">Lecture Time</th>
       </tr>
     </thead>
     <tbody>
         <tr>
+          <td><%= @classteacher.classroom.name %></td>
           <td><%= @classteacher.teacher.name %></td>
           <td> <%= @classteacher.lecture_number %></td>
         </tr>  
@@ -19,12 +21,14 @@
   <table class="table">
     <thead class="thead-dark">
       <tr>
+        <th scope="col">Teacher Name</th>
         <th scope="col">Classroom Name</th>
-        <th scop="col">Lecture Number</th>
+        <th scop="col">Lecture Time</th>
       </tr>
     </thead>
     <tbody>
         <tr>
+          <td><%= @classteacher.teacher.name %></td>
           <td><%= @classteacher.classroom.name %></td>
           <td><%= @classteacher.lecture_number %></td>
         </tr>  

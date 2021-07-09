@@ -1,21 +1,23 @@
 <center>     
-<h1>Teachers</h1>
+<h1>Teacher</h1>
 <table class="table">
   <thead class="thead-dark">
     <tr>
+      <th scope="col">Teacher Name</th>   
       <th scope="col">Classroom Name</th>
-      <th scope="col"Lecture Number</th>
+      <th scope="col">Lecture Time</th>
     </tr>
   </thead>
 
   <% @classrooms.each do |class_teacher|%>
     <tbody>
         <tr>
+          <td><%= class_teacher.teacher.name %></td>
           <td><%= class_teacher.classroom.name %></td>
           <td><%= class_teacher.lecture_number %></td>
         </tr>  
     </tbody>
   <% end %>  
 </table>
-
+<%= link_to 'Back', teachers_path %>
 
