@@ -1,8 +1,21 @@
 <center>
+
+  <%= search_form_for @search do |f| %>
+    <div class="field">
+      <%= f.label :name_cont, "Classroom Name" %>
+      <%= f.text_field :name_cont %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Search" %>
+    </div>
+  <% end %>
+
+
   <h1><td>Classroom</td></h1>
   <table class="table">
     <thead class="thead-dark">
-      <tr>
+
+    <tr>
         <th scope="col">Name</th>
         <th scope="col">Edit</th>
         <th scope="col">Delete</th>
@@ -12,8 +25,8 @@
       <% @classrooms.each do |classroom|%>
         <tr>          
           <td><%= link_to classroom.name, classroom %></td>
-          <td><%= link_to 'Edit', edit_classroom_path(classroom.id), method: :get %></td>
-          <td><%= link_to 'Delete', delete_classroom_path(classroom.id), method: :delete %></td>
+          <td><%= link_to 'Edit', edit_classroom_path(classroom.id), method: :get,class: :"btn btn-outline-secondary" %></td>
+          <td><%= link_to 'Delete', delete_classroom_path(classroom.id), method: :delete,class: :"btn btn-outline-danger" %></td>
           
         </tr>  
       <% end %>

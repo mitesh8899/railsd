@@ -1,4 +1,14 @@
 <center>
+  <%= search_form_for @search do |f| %>
+    <div class="field abcdef">
+      <%= f.label :name_cont, "Teacher Name" %>
+      <%= f.text_field :name_cont %>
+    </div>
+    <div class="actions abcdef">
+      <%= f.submit "Search" %>
+    </div>
+  <% end %>
+
   <h1>Teachers</h1>
   <table class="table">
     <thead class="thead-dark">
@@ -11,10 +21,10 @@
     </thead>
     <tbody>
       <% @teachers.each do |teacher|%>
-        <tr>
+        <tr id="teacher_<%= teacher.id%>">
           <td><%= link_to teacher.name, teacher %></td>
-          <td><%= link_to 'Edit', edit_teacher_path(teacher.id), method: :get %></td>
-          <td><%= link_to 'Delete', delete_teacher_path(teacher.id), method: :delete %></td>
+          <td><%= link_to 'Edit', edit_teacher_path(teacher.id), method: :get, class: :"btn btn-outline-secondary" %></td>
+          <td><%= link_to 'Delete', delete_teacher_path(teacher.id), method: :delete, class: :"btn btn-outline-danger" %></td>
         </tr>  
       <% end %>
     </tbody>

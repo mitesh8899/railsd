@@ -3,7 +3,8 @@ class ClassTeachersController < ApplicationController
 
 
   def index
-    @classteachers = ClassTeacher.all
+    @search = ClassTeacher.search(params[:query])
+    @classteachers = @search.result
   end
 
   def new

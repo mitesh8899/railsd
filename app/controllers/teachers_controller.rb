@@ -2,7 +2,8 @@ class TeachersController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @teachers = Teacher.all
+    @search = Teacher.search(params[:query])
+    @teachers = @search.result
   end
 
   def new
