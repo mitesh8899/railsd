@@ -32,7 +32,10 @@ class TeachersController < ApplicationController
   def destroy
     @teacher = Teacher.find(params[:id])
     @teacher.destroy
-    redirect_to teachers_path
+    respond_to do |format|
+      format.js
+      format.html {redirect_to teachers_path}
+    end
   end
 
   def show
@@ -45,5 +48,4 @@ class TeachersController < ApplicationController
   def teacher_params
     params.require(:teacher).permit(:name)
   end
-
 end

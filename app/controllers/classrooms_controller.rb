@@ -4,6 +4,7 @@ class ClassroomsController < ApplicationController
   def index
     @search = Classroom.search(params[:query])
     @classrooms = @search.result
+    @classrooms = Classroom.order("name").page(params[:page])
   end
 
   def new
@@ -32,7 +33,10 @@ class ClassroomsController < ApplicationController
   def destroy
     @classroom = Classroom.find(params[:id])
     @classroom.destroy
-    redirect_to classrooms_path
+    respond_to do |format|
+      format.js
+      format.html {redirect_to classrooms_path}
+    end
   end
 
   def show

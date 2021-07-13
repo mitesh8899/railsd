@@ -35,12 +35,12 @@
     </thead>
     <tbody>
       <% @classteachers.each do |classteacher| %>
-        <tr>
+        <tr id="class_teacher_<%= classteacher.id%>">
           <td><%= link_to classteacher.teacher.name, class_teacher_path(classteacher.id, type: 'teacher') %></td> 
           <td><%= link_to classteacher.classroom.name, class_teacher_path(classteacher.id, type: 'classroom') %></td> 
           <td><%= link_to classteacher.lecture_number, class_teacher_path(classteacher.id, type: 'lecture_number') %></td>
-          <td><%= link_to 'Edit', edit_class_teacher_path(classteacher.id), method: :get,class: :"btn btn-outline-secondary" %></td>
-          <td><%= link_to 'Delete', class_teacher_path(classteacher), method: :delete,class: :"btn btn-outline-danger" %></td>
+          <td><%= link_to 'Edit', edit_class_teacher_path(classteacher.id), method: :get, class: "btn btn-outline-secondary" %></td>
+          <td><%= link_to 'Delete', class_teacher_path(classteacher), method: :delete, class: "btn btn-outline-danger", remote: :true %></td>
         </tr>  
       <% end %>
     </tbody>
