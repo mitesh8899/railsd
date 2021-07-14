@@ -1,0 +1,23 @@
+<h1>Students</h1>
+<div id="student_form"></div>
+  <table class="table" id="students">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Roll_no</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+        <th scope="col">Show</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <% @students.each do |student|%>
+        <%= render partial: 'student', locals: { student: student } %>  
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+  <%= link_to 'New Student', new_student_path, remote: :true %>
+
+  

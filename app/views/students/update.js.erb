@@ -1,0 +1,2 @@
+$("#student_<%= @student.id %>").replaceWith("<%= j render partial: 'student', locals: { student: @student } %>");
+$("#student_form").html("")

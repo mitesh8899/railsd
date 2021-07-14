@@ -1,0 +1,20 @@
+
+ <%= form_for @student, remote: true do |form| %>
+
+  <div class="field">
+  <%= form.label :student_name %>
+  <%= form.text_field :name%>
+  </div>
+  
+  
+  <div class="field">
+  <%= form.label :student_roll_no %>
+  <%= form.text_field :roll_no%>
+  </div>
+  
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+
+  <% end %>
+

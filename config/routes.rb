@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
  
+  get 'students/index'
   devise_for :users
 
   
@@ -30,5 +31,6 @@ Rails.application.routes.draw do
   delete 'teachers/:id', to: 'teachers#destroy',as: :delete_teacher
   get 'teachers/:id', to: 'teachers#show',as: :teacher 
 
-
+   #Student Routes
+   resources  :students
 end
